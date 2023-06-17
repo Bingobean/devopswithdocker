@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  frontend:
+    build:
+      context: E:\devops-with-docker\material-applications\example-frontend
+    ports:
+      - 5000:5000
+    # environment:
+    #   - REACT_APP_BACKEND_URL=http://localhost:8080
+    container_name: frontend-compose
+
+  backend:
+    build:
+      context: E:\devops-with-docker\material-applications\example-backend
+    ports:
+      - 8080:8080
+    environment:
+      # - REQUEST_ORIGIN=http://localhost:5000
+      - REDIS_HOST=redis
+    container_name: backend-compose
+
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
+    container_name: redis-compose
+    restart: unless-stopped

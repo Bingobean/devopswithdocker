@@ -1,0 +1,9 @@
+FROM golang:1.16
+EXPOSE 8080
+WORKDIR /app
+COPY . .
+RUN go build
+RUN go test ./app_test.go
+# ENV REQUEST_ORIGIN=http://localhost/
+# ENV REDIS_HOST=redis
+CMD ["./server"]
