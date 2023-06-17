@@ -1,0 +1,9 @@
+FROM docker:latest
+
+WORKDIR /app
+
+RUN apk update && apk add --no-cache git
+
+COPY test34.sh /app/test34.sh
+
+ENTRYPOINT [ "/bin/sh","/app/test34.sh" ]

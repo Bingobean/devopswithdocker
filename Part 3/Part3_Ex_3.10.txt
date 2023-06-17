@@ -1,0 +1,6 @@
+In the exercise 3.10
+I used node base image to run a webapplication.
+Initially it was taking around 911mb which I named as node_310_before
+After changing the base image to an alpine version and it was around 120mb which I have named as node_310_after
+
+we can notice a significant size reduction which will inturn have better peformance and less headroom for security vulnerabilities
